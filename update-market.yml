@@ -1,0 +1,57 @@
+name: 📊 Actualizar Datos de Mercado
+
+on:
+  # Cada 30 min de Lunes a Viernes, horario de mercado europeo+americano (7:00-23:00 UTC)
+  schedule:
+    - cron: "0,30 7-22 * * 1-5"   # Horario de mercado
+    - cron: "0 8,20 * * 0,6"       # Sábado/Domingo (cripto + resumen)
+  
+  # Permite lanzarlo manualmente desde GitHub
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: 📥 Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 📡 Obtener datos de mercado (Yahoo Finance gratuito)
+        run: python scripts/fetch_data.py
+
+      - name: 🔍 Mostrar datos obtenidos
+        run: |
+          echo "=== data/market.json ==="
+          cat data/market.json
+
+      - name: 💾 Commit y push si hay cambios
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/market.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios en los datos."
+          else
+            TIMESTAMP=$(date -u "+%Y-%m-%d %H:%M UTC")
+            git commit -m "📊 Datos mercado: ${TIMESTAMP}"
+            git push
+          fi
+
+      - name: 🌐 Deploy a GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          # Publica todos los archivos del repo en gh-pages
+          keep_files: false
+          publish_branch: gh-pages
