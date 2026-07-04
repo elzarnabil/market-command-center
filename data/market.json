@@ -21,11 +21,11 @@
     "ma200": 17316.98
   },
   "btc": {
-    "price": 62396.57,
-    "chgAbs": 911.2692,
-    "chgPct": 1.4821,
-    "ma50": 67361.71,
-    "ma200": 74949.58
+    "price": 63175.98,
+    "chgAbs": 631.7808,
+    "chgPct": 1.0101,
+    "ma50": 67046.87,
+    "ma200": 74826.98
   },
   "vix": {
     "price": 15.81,
@@ -64,20 +64,20 @@
   },
   "ust10": {
     "price": 4.485,
-    "chgAbs": 0.093,
-    "chgPct": 2.1175,
-    "ma50": 4.44,
-    "ma200": 4.22
+    "chgAbs": 0,
+    "chgPct": 0,
+    "ma50": null,
+    "ma200": null
   },
   "ust2": {
     "price": 3.668,
-    "chgAbs": -0.012,
-    "chgPct": -0.3261,
-    "ma50": 3.61,
-    "ma200": 3.66
+    "chgAbs": 0,
+    "chgPct": 0,
+    "ma50": null,
+    "ma200": null
   },
   "_meta": {
-    "updated_utc": "2026-07-04T10:17:14.263266+00:00",
+    "updated_utc": "2026-07-04T21:04:55.634001+00:00",
     "ok": 11,
     "total": 11,
     "source": "Yahoo Finance (free, no API key)"
