@@ -21,11 +21,11 @@
     "ma200": 17316.98
   },
   "btc": {
-    "price": 63175.98,
-    "chgAbs": 631.7808,
-    "chgPct": 1.0101,
-    "ma50": 67046.87,
-    "ma200": 74826.98
+    "price": 62669.67,
+    "chgAbs": 125.4708,
+    "chgPct": 0.2006,
+    "ma50": 67036.74,
+    "ma200": 74824.44
   },
   "vix": {
     "price": 15.81,
@@ -57,27 +57,27 @@
   },
   "dxy": {
     "price": 100.857,
-    "chgAbs": -0.003,
-    "chgPct": -0.003,
-    "ma50": 99.5,
-    "ma200": 98.86
+    "chgAbs": -0.533,
+    "chgPct": -0.5257,
+    "ma50": 99.46,
+    "ma200": 98.84
   },
   "ust10": {
     "price": 4.485,
-    "chgAbs": 0,
-    "chgPct": 0,
-    "ma50": null,
-    "ma200": null
+    "chgAbs": 0.01,
+    "chgPct": 0.2235,
+    "ma50": 4.46,
+    "ma200": 4.23
   },
   "ust2": {
     "price": 3.668,
-    "chgAbs": 0,
-    "chgPct": 0,
-    "ma50": null,
-    "ma200": null
+    "chgAbs": -0.032,
+    "chgPct": -0.8649,
+    "ma50": 3.62,
+    "ma200": 3.65
   },
   "_meta": {
-    "updated_utc": "2026-07-04T21:04:55.634001+00:00",
+    "updated_utc": "2026-07-05T10:22:40.365043+00:00",
     "ok": 11,
     "total": 11,
     "source": "Yahoo Finance (free, no API key)"
